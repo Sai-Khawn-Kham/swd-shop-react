@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import Cart from "./Cart";
 import useCartStore from "../../../store/useCartStore";
-import useProductStore from "../../../store/useProductStore";
 import Swal from "sweetalert2";
 import { BsCart3, BsX } from "react-icons/bs";
 
 const CartSection = ({ handleClick }) => {
    const { carts, orderedCart } = useCartStore();
-   const { products } = useProductStore();
+   const [ products, setProducts ] = React.useState([]);
+
+   React.useEffect(() => {
+      fetch("https://fakestoreapi.com/products")
+         .then((res) => res.json())
+         .then((data) => setProducts(data))
+         .catch((err) => console.log(err));
+   }, []);
+
    const total = carts.reduce((pv, cv) => {
       const price = products.find(({ id }) => id === cv.productId).price;
       const cost = cv.quantity * price;

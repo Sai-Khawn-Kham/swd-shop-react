@@ -14,7 +14,7 @@ const publicRoute = [
       )
    },
    {
-      path: "product-detail/:id",
+      path: "products/:id",
       element: (
          <Suspense fallback={<Container>Loading...</Container>}>
             <ProductDetailPage />

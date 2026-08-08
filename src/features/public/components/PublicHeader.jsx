@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import CartSection from "./CartSection"
 import useCartStore from "../../../store/useCartStore";
-import useProductStore from "../../../store/useProductStore";
 
 const PublicHeader = () => {
    const { carts } = useCartStore();

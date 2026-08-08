@@ -76,16 +76,21 @@ const Cart = ({ cart: { id, productId, quantity } }) => {
 
   return (
     <div className="p-2 border border-gray-950 rounded-lg flex gap-3 group">
-      <div className="relative">
+      <div>
         <img src={product.image} alt={product.title} className="h-16 object-contain" />
-        <BsTrash
-          onClick={handleDelete}
-          className="absolute top-0 right-0 text-red-500 cursor-pointer opacity-0 group-hover:opacity-100 transition"
-        />
       </div>
-
       <div className="flex flex-col justify-between flex-1">
-        <p className="line-clamp-1">{product.title}</p>
+        <div className="grid grid-cols-10">
+          <p className="col-span-9 line-clamp-1">
+            {product.title}
+          </p>
+          <div className="flex justify-center items-center">
+            <BsTrash
+              onClick={handleDelete}
+              className="size-3 text-red-500 cursor-pointer opacity-100 lg:opacity-0 group-hover:opacity-100 transition"
+            />
+          </div>
+        </div>
         <div className="text-xs flex justify-between items-center">
           <p className="text-gray-500">${product.price}</p>
 

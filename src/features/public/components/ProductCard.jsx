@@ -25,7 +25,7 @@ const ProductCard = ({ product: { category, description, id, image, price, ratin
    };
 
    const handleOpenDetail = () => {
-      navigate(`/product-detail/${id}`);
+      navigate(`/products/${id}`);
    };
    return (
       <div className="h-[21.6rem] group">
