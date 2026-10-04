@@ -34,7 +34,7 @@ const ProductSection = () => {
             ))
          ) : filteredProducts.length === 0 ? (
             <div className="col-span-full text-center text-gray-500 mt-10">
-               There is no product to show currently
+               There is no product to show currently. haha bell
             </div>
          ) : (
             filteredProducts.map((product) => (
